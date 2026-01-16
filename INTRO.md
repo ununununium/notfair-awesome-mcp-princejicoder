@@ -21,7 +21,7 @@ Think of it as a **catalog** or **directory** where developers can:
 ## 📁 Structure
 
 ```
-d:\Antigravity\Awsome-mcp\
+d:\DELL\Proto\Awsome-mcp\
 ├── README.md           # Main list of MCP servers
 ├── CONTRIBUTING.md     # How to contribute
 ├── LICENSE             # MIT License

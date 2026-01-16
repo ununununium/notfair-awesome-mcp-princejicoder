@@ -2,6 +2,13 @@
 
 Please ensure your pull request adheres to the following guidelines:
 
+## How to Help
+
+We love contributions! If you're looking for where to start:
+- Check issues labeled **"good first issue"**
+- Look for **"help wanted"** tags on server repositories
+- Update documentation or fix broken links
+
 ## Adding to the List
 
 - Search previous suggestions before making a new one, as yours may be a duplicate.
@@ -46,10 +53,10 @@ Please include relevant tags from our legend system:
 - 🏠 Local
 - ☁️ Cloud
 
-**Access Type:**
-- 🔒 Read-only
-- ✍️ Read/Write  
-- ⚠️ Exec (can execute commands)
+**Risk Level:**
+- 🟢 **Safe** - Read-only, no system modifications
+- 🟡 **Moderate** - Write access, can modify data
+- 🔴 **High Risk** - Can execute commands or critical OS operations
 
 **Maintenance Status:**
 - 🟢 Active (updated in last 3 months)
@@ -58,7 +65,7 @@ Please include relevant tags from our legend system:
 
 Example:
 ```markdown
-- [Playwright](https://github.com/microsoft/playwright-mcp) 🆓 🏠 ⚠️ 🟢 - Web automation
+- [Playwright](https://github.com/microsoft/playwright-mcp) 🆓 🏠 🔴 🟢 - Web automation
 ```
 
 ## Maintenance Expectations

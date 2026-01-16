@@ -1,4 +1,4 @@
-# Awesome MCP 🚀
+﻿# Awesome MCP 🚀
 
 > A curated list of awesome Model Context Protocol (MCP) servers, tools, and resources
 
@@ -34,33 +34,50 @@ The [Model Context Protocol](https://modelcontextprotocol.io) (MCP) is an open s
 
 **Key Benefits:**
 - 🔌 **Universal connector** - One protocol to connect AI to any data source
-- 🔒 **Secure by design** - Controlled access to resources
+- 🟢 **Secure by design** - Controlled access to resources
 - 🛠️ **Extensible** - Build custom integrations easily
 - 🤝 **Interoperable** - Works across different AI platforms
 
+## Quick Start
+
+New to MCP? Start here:
+
+1. **Install a client**: [Claude Desktop](https://claude.ai/download) or [Cursor](https://cursor.sh)
+2. **Run a local server**: Try the [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) server
+3. **Try a simple task**: Ask the AI to "Summarize files in this folder" or "Read this text file"
+
+👉 **Pro Tip**: Use `npx` to run servers instantly without installation (e.g., `npx -y @modelcontextprotocol/server-filesystem`).
+
+## Use Cases
+
+Find the right tool for your goal:
+
+| Goal | Recommended MCPs |
+| :--- | :--- |
+| **Coding Agent** | [Git](#developer-tools), [VS Code](#code-analysis--development), [RepoMapper](#code-analysis--development) |
+| **Research** | [Fetch](#search--data), [Wikipedia](#knowledge--information), [Brave](#search--data) |
+| **Automation** | [Puppeteer](#browser-automation), [n8n](#workflow-automation), [Cron](#task-automation) |
+| **Personal AI OS** | [Filesystem](#system-operations), [Shell](#system-operations), [Memory](#knowledge-management) |
+| **Data Analysis** | [PostgreSQL](#databases), [Excel](#data-processing), [Open-Meteo](#weather--environment) |
+
 ## Legend
 
-Understanding server capabilities and requirements:
+Understanding server capabilities and risks:
 
 **Hosting:**
 - 🏠 **Local** - Runs on your local machine
 - ☁️ **Cloud** - Remote service / API
 
-**Access Type:**
-- 🔒 **Read-only** - Safe, no system modifications
-- ✍️ **Read/Write** - Can modify data
-- ⚠️ **Exec** - Can execute commands (review carefully)
+**Risk Level:**
+- 🟢 **Safe** - Read-only, no system modifications
+- 🟡 **Moderate** - Write access, can modify data
+- 🔴 **High Risk** - Can execute commands or critical OS operations
 
 **Pricing:**
 - 🆓 **Free** - No cost, no API key required
 - 🔑 **Free (Key)** - Free but requires API key registration
 - 💰 **Freemium** - Free tier available with paid upgrades
 - 💲 **Paid** - Requires payment
-
-**Status:**
-- 🟢 **Active** - Updated in last 3 months
-- 🟡 **Maintained** - Updated in last year
-- 🧪 **Experimental** - Early stage, not production-ready
 
 ## Security Model
 
@@ -74,7 +91,7 @@ MCP servers follow the **principle of least privilege** and user-controlled acce
 - ✅ Sandboxed execution - Isolated from system when possible
 - ✅ Auditable tool calls - All actions are logged and traceable
 
-**⚠️ Exercise Caution With:**
+**🔴 Exercise Caution With:**
 
 Servers that provide:
 - **Shell execution** - Can run arbitrary commands
@@ -83,6 +100,13 @@ Servers that provide:
 - **System control** - Can change OS settings
 
 Always review server code and permissions before use.
+
+## Offline & Regional Usage
+
+For air-gapped or offline environments:
+- Prioritize **Local (🏠)** servers (e.g., Filesystem, SQLite).
+- Avoid **Cloud (☁️)** servers that require internet access.
+- Use local LLMs (e.g., via Ollama) combined with local MCP servers for a fully offline stack.
 
 ## Official Resources
 
@@ -106,22 +130,29 @@ Servers that are **free to use**, with no API keys or optional free registration
 
 - [Wikipedia](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) 🆓 🏠 - Search and access Wikipedia articles
 - [Context Awesome](https://github.com/bh-rat/context-awesome) 🆓 ☁️ - Query 8,500+ curated awesome lists  
-- [REST Countries](https://restcountries.com) 🆓 ☁️ 🔒 - Comprehensive country data
+- [REST Countries](https://restcountries.com) 🆓 ☁️ 🟢 - Comprehensive country data
 
 #### ☁️ Weather & Environment
 
-- [Open-Meteo Weather](https://open-meteo.com) 🆓 ☁️ 🔒 - Global weather data and forecasts
-- Weather.gov 🆓 ☁️ 🔒 - US weather data
+- [Open-Meteo Weather](https://open-meteo.com) 🆓 ☁️ 🟢 - Global weather data and forecasts
+- Weather.gov 🆓 ☁️ 🟢 - US weather data
+
+#### 🛠️ Tooling & Ecosystem
+
+- [MCP Inspector](https://github.com/modelcontextprotocol/inspector) 🆓 🏠 - Official debugger for testing MCP servers
+- [Smithery](https://smithery.ai) 🆓 ☁️ - Discovery and installation registry for MCP servers
+- [Glama](https://glama.ai/mcp) 🆓 ☁️ - AI workspace with integrated MCP directory
 
 ####💻 Developer Tools
 
-- [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git) 🆓 🏠 ✍️ - Git repository operations
+- [Git](https://github.com/modelcontextprotocol/servers/tree/main/src/git) 🆓 🏠 🟡 - Git repository operations
 - [GitHub](https://github.com/github/github-mcp-server) 🔑 ☁️ - GitHub repository integration
 
 #### 🔍 Search & Data
 
-- [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) 🆓 ☁️ 🔒 - Web content fetching
-- [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) 🔑 ☁️ 🔒 - Web search
+- [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) 🆓 ☁️ 🟢 - Web content fetching
+- [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) 🔑 ☁️ 🟢 - Web search
+- [Google Search](https://github.com/mixelpixx/Google-Search-MCP-Server) 🆓 ☁️ 🟢 - Google search results
 
 #### 🧠 AI & Productivity
 
@@ -140,43 +171,42 @@ Servers with free tiers or that require paid API access.
 - **AWS**
   - [AWS Bedrock KB](https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server) 💰 ☁️ - Amazon Bedrock Knowledge Bases
   - [AWS CDK](https://github.com/awslabs/mcp/tree/main/src/cdk-mcp-server) 💰 ☁️ - AWS Cloud Development Kit
-  - [AWS Documentation](https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server) 💰 ☁️ 🔒 - AWS docs access
+  - [AWS Documentation](https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server) 💰 ☁️ 🟢 - AWS docs access
   
 - **Azure**
   - [Azure DevOps](https://github.com/microsoft/azure-devops-mcp) 💰 ☁️ - Azure DevOps integration
   
 - **Google Cloud**
-  - [Google Drive](https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive) 💰 ☁️ ✍️ - Google Drive access
-  - [Google Maps](https://github.com/anthropic/anthropic-quickstarts/tree/main/computer-use-demo/server) 💰 ☁️ 🔒 - Maps and location services
+  - [Google Drive](https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive) 💰 ☁️ 🟡 - Google Drive access
+  - [Google Maps](https://github.com/anthropic/anthropic-quickstarts/tree/main/computer-use-demo/server) 💰 ☁️ 🟢 - Maps and location services
 
 #### 🗄️ Databases
 
-- [PostgreSQL](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres) 🆓 🏠 ✍️ - PostgreSQL database access
-- [SQLite](https://github.com/modelcontextprotocol/servers/tree/main/src/sqlite) 🆓 🏠 ✍️ - SQLite database access  
-- [Supabase](https://github.com/supabase/mcp-server-supabase) 💰 ☁️ ✍️ - Supabase platform integration
-- [MongoDB](https://github.com/mongodb/mcp-server-mongodb) 💰 ☁️ ✍️ - MongoDB database access
-- [BigQuery](https://github.com/LucasHild/mcp-server-bigquery) 💰 ☁️ 🔒 - Google BigQuery access
+- [BigQuery](https://github.com/LucasHild/mcp-server-bigquery) 💰 ☁️ 🟢 - Google BigQuery access
+- [MongoDB](https://github.com/mongodb/mcp-server-mongodb) 💰 ☁️ 🟡 - MongoDB database access
+- [PostgreSQL](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres) 🆓 🏠 🟡 - PostgreSQL database access
+- [SQLite](https://github.com/modelcontextprotocol/servers/tree/main/src/sqlite) 🆓 🏠 🟡 - SQLite database access  
+- [Supabase](https://github.com/supabase/mcp-server-supabase) 💰 ☁️ 🟡 - Supabase platform integration
 
 #### 💬 Communication & Collaboration
 
-- [Slack](https://github.com/modelcontextprotocol/servers/tree/main/src/slack) 💰 ☁️ ✍️ - Slack workspace integration
-- [Discord](https://github.com/discord/discord-mcp) 💰 ☁️ ✍️ - Discord server management
-- [Gmail](https://github.com/google/gmail-mcp) 💰 ☁️ ✍️ - Gmail email access
 - [Basecamp](https://github.com/georgeantonopoulos/Basecamp-MCP-Server) 💰 ☁️ - Basecamp project management
+- [Discord](https://github.com/discord/discord-mcp) 💰 ☁️ 🟡 - Discord server management
+- [Gmail](https://github.com/google/gmail-mcp) 💰 ☁️ 🟡 - Gmail email access
+- [Slack](https://github.com/modelcontextprotocol/servers/tree/main/src/slack) 💰 ☁️ 🟡 - Slack workspace integration
 
 #### 💰 Finance & Business
 
 - [Stripe](https://stripe.com/mcp) 💲 ☁️ - Stripe payments API
 - [Chargebee](https://github.com/chargebee/agentkit/tree/main/modelcontextprotocol) 💲 ☁️ - Subscription management
 - [PayPal](https://github.com/paypal/paypal-mcp) 💲 ☁️ - PayPal integration
-- [Alpha Vantage](https://mcp.alphavantage.co/) 💰 ☁️ 🔒 - Financial market data
+- [Alpha Vantage](https://mcp.alphavantage.co/) 💰 ☁️ 🟢 - Financial market data
 
 #### 🔍 Search & Analytics
 
-- [Exa](https://github.com/exa-labs/exa-mcp-server) 💰 ☁️ 🔒 - AI-powered search
-- [Perplexity](https://www.perplexity.ai/mcp) 💰 ☁️ 🔒 - AI search and answers
-- [Google Search](https://github.com/google/google-search-mcp) 💰 ☁️ 🔒 - Google search results
-- [Fathom Analytics](https://github.com/mackenly/mcp-fathom-analytics) 💰 ☁️ 🔒 - Privacy-focused analytics
+- [Exa](https://github.com/exa-labs/exa-mcp-server) 💰 ☁️ 🟢 - AI-powered search
+- [Perplexity](https://www.perplexity.ai/mcp) 💰 ☁️ 🟢 - AI search and answers
+- [Fathom Analytics](https://github.com/mackenly/mcp-fathom-analytics) 💰 ☁️ 🟢 - Privacy-focused analytics
 
 #### 🎨 Creative & Media
 
@@ -195,18 +225,15 @@ Servers with free tiers or that require paid API access.
 #### 🛠️ Development Tools
 
 - [Linear](https://github.com/linear/linear-mcp) 💰 ☁️ - Issue tracking
-- [Jira](https://github.com/atlassian/jira-mcp) 💰 ☁️ - Project management
-- [Docker](https://github.com/docker/docker-mcp) 🆓 🏠 ⚠️ - Container management
+- [Docker](https://github.com/docker/docker-mcp) 🆓 🏠 🔴 - Container management
 
 #### 🌐 Web Services
 
-- [Airtable](https://github.com/Airtable/airtable-mcp) 💰 ☁️ ✍️ - Cloud database platform
-- [Confluence](https://github.com/atlassian/confluence-mcp) 💰 ☁️ - Team documentation  
-- [Trello](https://github.com/trello/trello-mcp) 💰 ☁️ - Project boards
+- [Airtable](https://github.com/Airtable/airtable-mcp) 💰 ☁️ 🟡 - Cloud database platform
 
-#### 🔒 Security
+#### 🟢 Security
 
-- [1Password](https://github.com/1Password/1password-mcp) 💲 🏠 🔒 - Password management
+- [1Password](https://github.com/1Password/1password-mcp) 💲 🏠 🟢 - Password management
 - [Okta](https://github.com/okta/okta-mcp) 💲 ☁️ - Identity management
 - [Auth0](https://github.com/auth0/auth0-mcp) 💲 ☁️ - Authentication platform
 
@@ -220,10 +247,10 @@ Servers that enable workflow automation, browser automation, and task orchestrat
 
 ### Browser Automation
 
-- [Playwright](https://github.com/microsoft/playwright-mcp) 🆓 🏠 ⚠️ - Official Microsoft Playwright MCP server for web automation
-- [Browserbase](https://github.com/browserbase/mcp-server-browserbase) 💰 ☁️ ⚠️ - Cloud browser automation with headless Chrome
-- [Puppeteer](https://github.com/modelcontextprotocol/servers-archived/tree/main/src/puppeteer) 🆓 🏠 ⚠️ - Browser automation for web scraping
-- [Browser-Use](https://github.com/co-browser/browser-use-mcp-server) 🆓 🏠 ⚠️ - Browser automation in Docker with VNC
+- [Playwright](https://github.com/microsoft/playwright-mcp) 🆓 🏠 🔴 - Official Microsoft Playwright MCP server for web automation
+- [Browserbase](https://github.com/browserbase/mcp-server-browserbase) 💰 ☁️ 🔴 - Cloud browser automation with headless Chrome
+- [Puppeteer](https://github.com/modelcontextprotocol/servers-archived/tree/main/src/puppeteer) 🆓 🏠 🔴 - Browser automation for web scraping
+- [Browser-Use](https://github.com/co-browser/browser-use-mcp-server) 🆓 🏠 🔴 - Browser automation in Docker with VNC
 
 ### Workflow Automation
 
@@ -234,7 +261,10 @@ Servers that enable workflow automation, browser automation, and task orchestrat
 
 ### Task Automation
 
-- [Cron](https://github.com/cron-mcp/cron-server) 🆓 🏠 ⚠️ - Scheduled task execution
+
+
+- [Cron](https://github.com/cron-mcp/cron-server) 🆓 🏠 🔴 - Scheduled task execution
+- [Home Assistant](https://github.com/allenporter/mcp-server-home-assistant) 🆓 🏠 🟡 - Control smart home devices
 - [IFTTT](https://ifttt.com/mcp) 💰 ☁️ - If-This-Then-That automation
 
 ---
@@ -247,15 +277,15 @@ Servers that provide system-level control and OS integration capabilities.
 
 ### System Operations
 
-- [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) 🆓 🏠 ✍️ ⚠️ - Secure file operations with access controls
-- [Shell](https://github.com/executeautomation/shell-mcp) 🆓 🏠 ⚠️ - Execute shell commands securely
-- [Windows PowerShell](https://github.com/microsoft/powershell-mcp) 🆓 🏠 ⚠️ - Windows system control
-- [macOS AppleScript](https://github.com/apple/applescript-mcp) 🆓 🏠 ⚠️ - macOS automation and control
+- [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) 🆓 🏠 🟡 🔴 - Secure file operations with access controls
+- [Shell](https://github.com/executeautomation/shell-mcp) 🆓 🏠 🔴 - Execute shell commands securely
+- [Windows PowerShell](https://github.com/microsoft/powershell-mcp) 🆓 🏠 🔴 - Windows system control
+- [macOS AppleScript](https://github.com/apple/applescript-mcp) 🆓 🏠 🔴 - macOS automation and control
 
 ### Desktop Integration
 
-- [Apple Reminders](https://github.com/FradSer/mcp-server-apple-reminders) 🆓 🏠 ✍️ - Interact with Apple Reminders on macOS
-- [System Monitor](https://github.com/seekrays/mcp-monitor) 🆓 🏠 🔒 - CPU, memory, disk, network monitoring
+- [Apple Reminders](https://github.com/FradSer/mcp-server-apple-reminders) 🆓 🏠 🟡 - Interact with Apple Reminders on macOS
+- [System Monitor](https://github.com/seekrays/mcp-monitor) 🆓 🏠 🟢 - CPU, memory, disk, network monitoring
 
 ---
 
@@ -267,11 +297,11 @@ Servers for Retrieval-Augmented Generation and vector database integration.
 
 ### Vector Databases
 
-- [Pinecone](https://github.com/pinecone-io/pinecone-mcp) 💰 ☁️ ✍️ - Managed vector database
-- [Weaviate](https://github.com/weaviate/weaviate-mcp) 🆓 🏠/☁️ ✍️ - Open-source vector search engine
-- [Qdrant](https://github.com/qdrant/qdrant-mcp) 🆓 🏠 ✍️ - Vector similarity search engine
-- [Milvus](https://github.com/milvus-io/milvus-mcp) 🆓 ☁️ ✍️ - Cloud-native vector database
-- [Chroma](https://github.com/chroma-core/chroma-mcp) 🆓 🏠 ✍️ - AI-native open-source embedding database
+- [Pinecone](https://github.com/pinecone-io/pinecone-mcp) 💰 ☁️ 🟡 - Managed vector database
+- [Weaviate](https://github.com/weaviate/weaviate-mcp) 🆓 🏠/☁️ 🟡 - Open-source vector search engine
+- [Qdrant](https://github.com/qdrant/qdrant-mcp) 🆓 🏠 🟡 - Vector similarity search engine
+- [Milvus](https://github.com/milvus-io/milvus-mcp) 🆓 ☁️ 🟡 - Cloud-native vector database
+- [Chroma](https://github.com/chroma-core/chroma-mcp) 🆓 🏠 🟡 - AI-native open-source embedding database
 
 ### RAG Platforms
 
@@ -281,9 +311,9 @@ Servers for Retrieval-Augmented Generation and vector database integration.
 
 ### Knowledge Management
 
-- [Memory](https://github.com/modelcontextprotocol/servers/tree/main/src/memory) 🆓 🏠 ✍️ - Knowledge graph-based persistent memory
-- [Obsidian](https://github.com/obsidian/obsidian-mcp) 💰 🏠 ✍️ - Personal knowledge base
-- [Notion](https://github.com/notion/notion-mcp) 💰 ☁️ ✍️ - Connected workspace
+- [Memory](https://github.com/modelcontextprotocol/servers/tree/main/src/memory) 🆓 🏠 🟡 - Knowledge graph-based persistent memory
+- [Obsidian](https://github.com/obsidian/obsidian-mcp) 💰 🏠 🟡 - Personal knowledge base
+- [Notion](https://github.com/notion/notion-mcp) 💰 ☁️ 🟡 - Connected workspace
 
 ### Embedding Services
 
@@ -306,16 +336,16 @@ Servers for application monitoring, logging, tracing, and performance analysis.
 
 ### Logging & Log Analytics
 
-- [Grafana Loki](https://github.com/tumf/grafana-loki-mcp) 🆓 🏠/☁️ 🔒 - Log aggregation system
-- [Elasticsearch](https://github.com/elastic/elasticsearch-mcp) 💰 ☁️ - Search and analytics engine
+- [Grafana Loki](https://github.com/tumf/grafana-loki-mcp) 🆓 🏠/☁️ 🟢 - Log aggregation system
+- [Elasticsearch](https://github.com/elastic/mcp-server-elasticsearch) 💰 ☁️ - Search and analytics engine
 - [Logfire](https://github.com/pydantic/logfire-mcp) 💰 ☁️ - OpenTelemetry traces and metrics
 
 ### Metrics & Monitoring
 
-- [Prometheus](https://github.com/yshngg/pmcp) 🆓 🏠 🔒 - Monitoring system and time series database
+- [Prometheus](https://github.com/yshngg/pmcp) 🆓 🏠 🟢 - Monitoring system and time series database
 - [Grafana](https://github.com/grafana/mcp-grafana) 🆓 🏠/☁️ - Observability and data visualization
 - [VictoriaMetrics](https://github.com/VictoriaMetrics-Community/mcp-victoriametrics) 🆓 🏠 - Time series database
-- [Netdata](https://github.com/netdata/netdata) 🆓 🏠 🔒 - Real-time performance monitoring
+- [Netdata](https://github.com/netdata/netdata) 🆓 🏠 🟢 - Real-time performance monitoring
 
 ### Error Tracking
 
@@ -346,23 +376,23 @@ Production-ready MCP servers and reference implementations from real-world use c
 
 - [CodeGraph Context](https://github.com/Shashankss1205/CodeGraphContext) 🆓 🏠 - Index code into graph database for AI context
 - [VS Code MCP](https://github.com/juehang/vscode-mcp-server) 🆓 🏠 - Read directory structure, lint problems, edit files
-- [RepoMapper](https://github.com/pdavis68/RepoMapper) 🆓 🏠 🔒 - Dynamic repository mapping for AI
-- [Code Assistant](https://github.com/stippi/code-assistant) 🆓 🏠 ⚠️ - Multi-project coding agent
+- [RepoMapper](https://github.com/pdavis68/RepoMapper) 🆓 🏠 🟢 - Dynamic repository mapping for AI
+- [Code Assistant](https://github.com/stippi/code-assistant) 🆓 🏠 🔴 - Multi-project coding agent
 
 ### Data Processing
 
 - [Data Exploration](https://github.com/reading-plus-ai/mcp-server-data-exploration) 🆓 🏠 - Autonomous CSV data analysis
-- [Excel MCP](https://github.com/haris-musa/excel-mcp-server) 🆓 🏠 ✍️ - Excel manipulation and analysis
-- [dbt Docs](https://github.com/mattijsdp/dbt-docs-mcp) 🆓 🏠 🔒 - dbt project metadata and lineage
+- [Excel MCP](https://github.com/haris-musa/excel-mcp-server) 🆓 🏠 🟡 - Excel manipulation and analysis
+- [dbt Docs](https://github.com/mattijsdp/dbt-docs-mcp) 🆓 🏠 🟢 - dbt project metadata and lineage
 
 ### Content & Media
 
-- [YouTube Transcript](https://github.com/kimtaeyoon83/mcp-server-youtube-transcript) 🆓 ☁️ 🔒 - Fetch YouTube subtitles for AI
-- [Podcast Search](https://www.audioscrape.com/docs/mcp) 💰 ☁️ 🔒 - Search 1M+ hours of podcasts
+- [YouTube Transcript](https://github.com/kimtaeyoon83/mcp-server-youtube-transcript) 🆓 ☁️ 🟢 - Fetch YouTube subtitles for AI
+- [Podcast Search](https://www.audioscrape.com/docs/mcp) 💰 ☁️ 🟢 - Search 1M+ hours of podcasts
 
 ### Security & DevOps
 
-- [Inspektor Gadget](https://github.com/inspektor-gadget/ig-mcp-server) 🆓 🏠 ⚠️ - Container debugging with eBPF
+- [Inspektor Gadget](https://github.com/inspektor-gadget/ig-mcp-server) 🆓 🏠 🔴 - Container debugging with eBPF
 - [BloodHound MCP](https://github.com/MorDavid/BloodHound-MCP-AI) 🆓 🏠 - Active Directory attack path analysis
 
 ### Multi-Agent Systems
@@ -385,6 +415,25 @@ Early-stage or experimental servers not yet production-ready.
 
 ---
 
+## Agent Patterns
+
+<a id="agent-patterns"></a>
+
+Strategic patterns for building reliable agents:
+
+- **Planner-Executor**: One agent creates a plan, another executes steps (uses [Sequential Thinking](#ai--productivity)).
+- **Tool-Only**: Simple agent that just calls tools (e.g., "Get weather").
+- **Memory-Backed**: Agent that persists state across sessions using [Memory](#knowledge-management) or [PostgreSQL](#databases).
+- **Multi-Agent Swarm**: Specialized agents collaborating (e.g., Research Agent + Writer Agent + Editor Agent).
+
+### Evaluation & Benchmarks
+
+When choosing servers, consider:
+- **Latency**: Local (🏠) is faster than Cloud (☁️).
+- **Capability**: Does it support all operations you need?
+- **Risk**: Check the risk level (🟢/🟡/🔴).
+- **Cost**: 🆓 vs 💰.
+
 ## Reference Architectures
 
 <a id="reference-architectures"></a>
@@ -402,6 +451,10 @@ Common patterns for combining MCP servers into powerful AI systems.
 ### 👨‍💻 Coding Agent
 **Components:** Git + RepoMapper + VS Code MCP + GitHub  
 **Use Case:** Autonomous code analysis, refactoring, and PR management
+
+### 🏠 Home Automation Agent
+**Components:** Home Assistant + Cron + Slack + OpenAI  
+**Use Case:** Smart home control, energy monitoring, and family notifications
 
 ### 🤖 Automation Agent
 **Components:** Browser Automation + n8n + Cron + Slack  
@@ -425,7 +478,6 @@ Reusable templates and starter projects for building MCP servers.
 
 - [TypeScript MCP Template](https://github.com/modelcontextprotocol/typescript-sdk/tree/main/examples) - Official TypeScript starter
 - [Python MCP Template](https://github.com/modelcontextprotocol/python-sdk/tree/main/examples) - Official Python starter
-- [Secure MCP Server Template](https://github.com/secure-mcp/template) - Production-ready template with security best practices
 - [Dockerized MCP Example](https://github.com/docker/mcp-example) - Container-based MCP deployment
 
 **Contributing:** Have a useful template? Submit a PR!
@@ -468,6 +520,8 @@ Build your own MCP servers:
 ## Contributing
 
 Contributions welcome! Please read the [contribution guidelines](CONTRIBUTING.md) first.
+
+Looking for where to start? Check issues labeled "good first issue" in the server repositories!
 
 ### How to Submit
 
