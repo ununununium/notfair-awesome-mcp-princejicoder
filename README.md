@@ -142,6 +142,8 @@ Servers that are **free to use**, with no API keys or optional free registration
 - [MCP Inspector](https://github.com/modelcontextprotocol/inspector) 🆓 🏠 - Official debugger for testing MCP servers
 - [Smithery](https://smithery.ai) 🆓 ☁️ - Discovery and installation registry for MCP servers
 - [Glama](https://glama.ai/mcp) 🆓 ☁️ - AI workspace with integrated MCP directory
+- [toprank](https://github.com/nowork-studio/toprank) 🆓 🏠 🟡 - Open-source Claude Code plugin providing SEO & Google Ads skills. Connects Google Search Console, PageSpeed Insights, and Google Ads API.
+
 
 ####💻 Developer Tools
 
