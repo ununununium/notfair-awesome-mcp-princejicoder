@@ -201,6 +201,7 @@ Servers with free tiers or that require paid API access.
 - [Chargebee](https://github.com/chargebee/agentkit/tree/main/modelcontextprotocol) 💲 ☁️ - Subscription management
 - [PayPal](https://github.com/paypal/paypal-mcp) 💲 ☁️ - PayPal integration
 - [Alpha Vantage](https://mcp.alphavantage.co/) 💰 ☁️ 🟢 - Financial market data
+- [NotFair](https://notfair.co/) 💰 ☁️ 🟡 - Google Ads MCP server: diagnose performance, recommend optimizations, execute approved changes via the Google Ads API
 
 #### 🔍 Search & Analytics
 
