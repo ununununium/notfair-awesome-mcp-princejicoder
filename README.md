@@ -207,6 +207,7 @@ Servers with free tiers or that require paid API access.
 - [Exa](https://github.com/exa-labs/exa-mcp-server) 💰 ☁️ 🟢 - AI-powered search
 - [Perplexity](https://www.perplexity.ai/mcp) 💰 ☁️ 🟢 - AI search and answers
 - [Fathom Analytics](https://github.com/mackenly/mcp-fathom-analytics) 💰 ☁️ 🟢 - Privacy-focused analytics
+- [NotFair](https://github.com/nowork-studio/NotFair) 🆓 ☁️ 🟡 🟢 - Open-source Claude Code skills for SEO, GEO, Google Ads, and Meta Ads; connects via Google Ads MCP, Meta Ads MCP, Google Search Console MCP, and Google Analytics (GA4) MCP.
 
 #### 🎨 Creative & Media
 
